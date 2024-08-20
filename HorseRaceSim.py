@@ -32,6 +32,11 @@ class Horse(pygame.sprite.Sprite):
         self.color = color
         horses.add(self)
         self.finished = False
+        self.speed = random.uniform(1, 3)  # Variable speed
+        self.max_speed = random.uniform(3, 6)  # Maximum speed
+        self.acceleration = random.uniform(0.1, 0.3)  # Acceleration rate
+        self.deceleration = random.uniform(0.1, 0.3)  # Deceleration rate
+        self.current_speed = self.speed
         
     def update(self):
         global game, run, finish_order
@@ -39,7 +44,14 @@ class Horse(pygame.sprite.Sprite):
         if game:
             if not self.finished:
                 if self.rect.x < 900:
-                    self.rect.x += random.randrange(0, 5)
+                   # self.rect.x += random.randrange(0, 5)
+                    self.current_speed += self.acceleration
+                    if self.current_speed > self.max_speed:
+                        self.current_speed = self.max_speed
+                    
+                    # Move the horse with some variability
+                    movement = random.uniform(self.current_speed - 1, self.current_speed + 1)
+                    self.rect.x += max(0, movement)   
                 else:
                     self.finished = True
                     finish_order.append(self.horsename)
@@ -67,7 +79,7 @@ game = 1
 finish_order = []
 
 # Create horse instances
-pablo = Horse("horse1", 10, 100, "white")
+horse1 = Horse("horse1", 10, 100, "white")
 horse2 = Horse("horse2", 10, 200, "blue")
 horse3 = Horse("horse3", 10, 300, "red")
 horse4 = Horse("horse4", 10, 400, "yellow")

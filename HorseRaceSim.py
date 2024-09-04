@@ -32,8 +32,8 @@ class Horse(pygame.sprite.Sprite):
         self.color = color
         horses.add(self)
         self.finished = False
-        self.speed = random.uniform(1, 3)  # Variable speed
-        self.max_speed = random.uniform(3, 6)  # Maximum speed
+        self.speed = random.uniform(0.2, 1)  # Variable speed
+        self.max_speed = random.uniform(2, 4)  # Maximum speed
         self.acceleration = random.uniform(0.1, 0.3)  # Acceleration rate
         self.deceleration = random.uniform(0.1, 0.3)  # Deceleration rate
         self.current_speed = self.speed
@@ -79,16 +79,16 @@ game = 1
 finish_order = []
 
 # Create horse instances
-horse1 = Horse("horse1", 10, 50, "red")
-horse2 = Horse("horse2", 10, 130, "red")
-horse3 = Horse("horse3", 10, 210, "red")
-horse4 = Horse("horse4", 10, 290, "red")
-horse5 = Horse("horse5", 10, 370, "red")
-horse6 = Horse("horse6", 10, 450, "red")
-horse7 = Horse("horse7", 10, 530, "red")
-horse8 = Horse("horse8", 10, 610, "red")
-horse9 = Horse("horse9", 10, 690, "red")
-horse10 = Horse("horse10", 10, 770, "red")
+horse1 = Horse("Natey", 10, 50, "red")
+horse2 = Horse("MrKaplan", 10, 130, "red")
+horse3 = Horse("Seba", 10, 210, "red")
+horse4 = Horse("Raffy", 10, 290, "red")
+horse5 = Horse("Seany", 10, 370, "red")
+horse6 = Horse("MrFlack", 10, 450, "red")
+horse7 = Horse("Mish", 10, 530, "red")
+horse8 = Horse("Larko", 10, 610, "red")
+horse9 = Horse("Griffy", 10, 690, "red")
+horse10 = Horse("Kodjak", 10, 770, "red")
 
 run = 1
 result_display_time = 5000  # Time in milliseconds to display the results before quitting

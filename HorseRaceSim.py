@@ -79,11 +79,16 @@ game = 1
 finish_order = []
 
 # Create horse instances
-horse1 = Horse("horse1", 10, 100, "white")
-horse2 = Horse("horse2", 10, 200, "blue")
-horse3 = Horse("horse3", 10, 300, "red")
-horse4 = Horse("horse4", 10, 400, "yellow")
-horse5 = Horse("horse5", 10, 500, "green")
+horse1 = Horse("horse1", 10, 50, "red")
+horse2 = Horse("horse2", 10, 130, "red")
+horse3 = Horse("horse3", 10, 210, "red")
+horse4 = Horse("horse4", 10, 290, "red")
+horse5 = Horse("horse5", 10, 370, "red")
+horse6 = Horse("horse6", 10, 450, "red")
+horse7 = Horse("horse7", 10, 530, "red")
+horse8 = Horse("horse8", 10, 610, "red")
+horse9 = Horse("horse9", 10, 690, "red")
+horse10 = Horse("horse10", 10, 770, "red")
 
 run = 1
 result_display_time = 5000  # Time in milliseconds to display the results before quitting
@@ -106,8 +111,10 @@ while run:
         pygame.draw.rect(screen, background_color, (10, 590, 300, 200))
         
         for i, horsename in enumerate(finish_order):
-            text = font.render(f"{i+1}. {horsename}", True, text_color)
-            screen.blit(text, (20, 600 + i * 30))  # Display the order on the screen
+            result_text = font.render(f"{i+1}. {horsename}", True, text_color, background_color)
+            screen.blit(result_text, (20, 50 + i * 30))
+            #text = font.render(f"{i+1}. {horsename}", True, text_color)
+            #screen.blit(text, (20, 50 + i * 30))  # Display the order on the screen
 
     pygame.display.flip()
     clock.tick(25)
